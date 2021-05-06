@@ -1,0 +1,45 @@
+syntax = "proto3";
+package bank;
+option go_package = "/main";
+
+service Bank {
+  rpc MsgDelivery(MsgDeliveryRequest) returns (MsgDeliveryResponse) {}
+  rpc PropogateMsg(PropogateRequest) returns (MsgDeliveryResponse) {}
+}
+
+
+enum CustomerInterface {
+  unknown = 0;
+  query = 1;
+  deposit = 2;
+  withdraw = 3;
+}
+
+enum BranchInterface {
+  propogate_withdraw = 0;
+  propogate_deposit = 1;
+}
+
+enum Result {
+  success = 0;
+  error = 1;
+}
+
+message MsgDeliveryRequest {
+  int64 id_ = 1;
+  CustomerInterface interface = 2;
+  double money = 3;
+}
+
+message PropogateRequest {
+  int64 id_ = 1;
+  BranchInterface interface = 2;
+  double money = 3;
+}
+
+message MsgDeliveryResponse{
+  int64 id_ = 1;
+  Result result = 2;
+  double money = 3;
+  CustomerInterface interface = 4;
+}

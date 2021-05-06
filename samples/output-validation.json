@@ -1,0 +1,40 @@
+[
+    {
+     "id": 1,
+     "recv": [
+      {
+       "interface": "query",
+       "result": "success",
+       "money": 950.23
+      }
+     ]
+    },
+    {
+     "id": 2,
+     "recv": [
+      {
+       "interface": "deposit",
+       "result": "success"
+      },
+      {
+       "interface": "query",
+       "result": "success",
+       "money": 950.23
+      }
+     ]
+    },
+    {
+     "id": 3,
+     "recv": [
+      {
+       "interface": "deposit",
+       "result": "success"
+      },
+      {
+       "interface": "query",
+       "result": "success",
+       "money": 950.23
+      }
+     ]
+    }
+   ]
